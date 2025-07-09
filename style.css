@@ -1,0 +1,231 @@
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #ff6b6b;
+    --dark-color: #2d3436;
+    --light-color: #f5f6fa;
+    --consistency-color: #4a6bff;
+    --improvement-color: #4CAF50;
+    --streak-color: #FF9800;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.app-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem 1rem;
+}
+
+.app-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+}
+
+.app-icon i {
+    color: white;
+    font-size: 1.5rem;
+    transform: rotate(90deg);
+}
+
+.app-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    overflow-y: auto;
+}
+
+.calendar-section {
+    margin: 1rem 0;
+    background-color: white;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calendar-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    color: var(--dark-color);
+}
+
+.day-cell {
+    aspect-ratio: 1/1;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.stat-box {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.stat-box i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.stat-box.consistency i {
+    color: var(--consistency-color);
+}
+
+.stat-box.improvement i {
+    color: var(--improvement-color);
+}
+
+.stat-box.streak i {
+    color: var(--streak-color);
+}
+
+.stat-box h4 {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    color: var(--dark-color);
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.stat-box.consistency .stat-value {
+    color: var(--consistency-color);
+}
+
+.stat-box.improvement .stat-value {
+    color: var(--improvement-color);
+}
+
+.stat-box.streak .stat-value {
+    color: var(--streak-color);
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #7f8c8d;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 0.8rem 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #7f8c8d;
+    font-size: 0.7rem;
+    flex: 1;
+}
+
+.nav-item i {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+@media (max-width: 360px) {
+    .app-header {
+        padding: 1rem 0.5rem 0.5rem;
+    }
+    
+    .app-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .calendar-header h3 {
+        font-size: 0.9rem;
+    }
+    
+    .day-header {
+        font-size: 0.7rem;
+    }
+    
+    .stat-box {
+        padding: 0.8rem 0.3rem;
+    }
+    
+    .stat-box h4 {
+        font-size: 0.7rem;
+    }
+    
+    .stat-value {
+        font-size: 1rem;
+    }
+}
