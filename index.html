@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="login-container" id="login-container">
+        <h2>Login to Reps & Repeat</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Send Code</button>
+        </form>
+        <div id="code-container" style="display:none;">
+            <input type="text" id="auth-code" placeholder="Enter authentication code" required>
+            <button id="verify-button">Verify Code</button>
+        </div>
+    </div>
+    
     <div class="main-container">
         <header class="app-header">
             <div class="app-icon">
