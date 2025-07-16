@@ -9,19 +9,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-container" id="login-container">
+    <div id="login-screen" class="fullscreen">
+    <div class="login-container">
         <h2>Login to Reps & Repeat</h2>
         <form id="login-form">
             <input type="email" id="email" placeholder="Enter your email" required>
             <button type="submit">Send Code</button>
-        </form>
-        <div id="code-container" style="display:none;">
-            <input type="text" id="auth-code" placeholder="Enter authentication code" required>
-            <button id="verify-button">Verify Code</button>
+            </form>
         </div>
     </div>
     
-    <div class="main-container">
+    <div id="main-container" class="main-container" style="display: none;">
         <header class="app-header">
             <div class="app-icon">
                 <i class="fas fa-redo-alt"></i>
@@ -92,6 +90,6 @@
         </nav>
     </div>
 
-    <script src="js/app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
