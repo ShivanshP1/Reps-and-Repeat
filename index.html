@@ -11,12 +11,17 @@
 <body>
     <div id="login-screen" class="fullscreen">
     <div class="login-container">
-        <h2>Login to Reps & Repeat</h2>
+        <h2>Reps & Repeat</h2>
         <form id="login-form">
             <input type="email" id="email" placeholder="Enter your email" required>
             <button type="submit">Send Code</button>
-            </form>
-        </div>
+        </form>
+
+        <form id="verify-form" style="display: none;">
+            <input type="text" id="code" placeholder="Enter the code you received" required />
+            <button type="submit">Verify Code</button>
+        </form>
+      </div>
     </div>
     
     <div id="main-container" class="main-container" style="display: none;">
@@ -25,6 +30,8 @@
                 <i class="fas fa-redo-alt"></i>
             </div>
             <h1>Reps & Repeat</h1>
+
+            <button id="logout-btn" class="logout-button">Logout</button>
         </header>
 
         <div class="content-area">
