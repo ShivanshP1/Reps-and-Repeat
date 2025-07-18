@@ -12,8 +12,14 @@
     <div id="login-screen" class="fullscreen">
     <div class="login-container">
         <h2>Reps & Repeat</h2>
+
         <form id="login-form">
-            <input type="email" id="email" placeholder="Enter your email" required>
+            <select id="method-select" required>
+                <option value="email">Send code via Email</option>
+                <option value="sms">Send code via SMS</option>
+            </select>
+
+            <input type="text" id="emailOrPhone" placeholder="Enter your email or phone number" required>
             <button type="submit">Send Code</button>
         </form>
 
