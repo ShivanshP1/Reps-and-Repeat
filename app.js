@@ -29,22 +29,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let userEmail = '';
 
-    //send code to email
+    const methodSelect = document.getElementById('method-select');
+    const emailOrPhoneInput = document.getElementById('emailOrPhone');
+
     loginForm.addEventListener('submit', async function (e) {
         e.preventDefault();
-        userEmail = emailInput.value.trim();
+
+        const method = methodSelect.value; // "email" or "sms"
+        const destination = emailOrPhoneInput.value.trim();
+        userEmail = destination; // still used in verify step
 
         try {
             const response = await fetch('http://localhost:3000/send-code', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: userEmail })
+                body: JSON.stringify({ method, destination }) // pass both
             });
 
             const data = await response.json();
 
             if (data.success) {
-                alert(`Code sent to ${userEmail}`);
+                alert(`Code sent via ${method.toUpperCase()} to ${destination}`);
                 loginForm.style.display = 'none';
                 verifyForm.style.display = 'flex';
             } else {
